@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable {
+
+    @Column(name = "Amount")
+    private BigInteger amount;
+    @Column(name = "DueAmt")
+    private BigInteger dueAmt;
+    @Column(name = "OverdueAmt")
+    private BigInteger overdueAmt;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -52,12 +60,6 @@ public class Customer implements Serializable {
     private String email;
     @Column(name = "Overdue")
     private Integer overdue;
-    @Column(name = "Amount")
-    private Long amount;
-    @Column(name = "OverdueAmt")
-    private Long overdueAmt;
-    @Column(name = "DueAmt")
-    private Long dueAmt;
     @Size(max = 50)
     @Column(name = "Status")
     private String status;
@@ -128,29 +130,6 @@ public class Customer implements Serializable {
         this.overdue = overdue;
     }
 
-    public Long getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-    public Long getOverdueAmt() {
-        return overdueAmt;
-    }
-
-    public void setOverdueAmt(Long overdueAmt) {
-        this.overdueAmt = overdueAmt;
-    }
-
-    public Long getDueAmt() {
-        return dueAmt;
-    }
-
-    public void setDueAmt(Long dueAmt) {
-        this.dueAmt = dueAmt;
-    }
 
     public String getStatus() {
         return status;
@@ -173,6 +152,30 @@ public class Customer implements Serializable {
         int hash = 0;
         hash += (custID != null ? custID.hashCode() : 0);
         return hash;
+    }
+
+    public BigInteger getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigInteger amount) {
+        this.amount = amount;
+    }
+
+    public BigInteger getDueAmt() {
+        return dueAmt;
+    }
+
+    public void setDueAmt(BigInteger dueAmt) {
+        this.dueAmt = dueAmt;
+    }
+
+    public BigInteger getOverdueAmt() {
+        return overdueAmt;
+    }
+
+    public void setOverdueAmt(BigInteger overdueAmt) {
+        this.overdueAmt = overdueAmt;
     }
 
 }

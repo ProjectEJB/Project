@@ -7,18 +7,23 @@ package com.mycompany;
 
 import java.util.List;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
+import model.Invoicetype;
 import model.Salesorder;
+import model.Slsorderdetail;
 
 /**
  *
- * @author Administrator
+ * @author Sangvtse61398
  */
-@Stateful
+@Stateless
 public class SaleSession implements SaleSessionRemote {
 
+    static String TRAHANG = "NT";
     @PersistenceUnit(unitName = "SaleManagerPU")
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
@@ -32,9 +37,48 @@ public class SaleSession implements SaleSessionRemote {
     @Override
     public List FindAll() {
         entityManager = entityManagerFactory.createEntityManager();
-        List<Salesorder> result = entityManager.createQuery("from Salesorder ",
-                Salesorder.class).getResultList();
-        return result;
+        try {
+            List<Salesorder> result = entityManager.createNamedQuery("Salesorder.findAll",
+                    Salesorder.class).getResultList();
+            return result;
+        } catch (Exception e) {
+            System.out.println("ERROR FindAll : " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public List<Slsorderdetail> viewSalesOrderDetail(String OrderNo) {
+        entityManager = entityManagerFactory.createEntityManager();
+        try {
+            List<Slsorderdetail> result = entityManager.createNamedQuery("Slsorderdetail.findByOrderNo",
+                    Slsorderdetail.class).getResultList();
+            return result;
+        } catch (Exception e) {
+
+            System.out.println("ERROR viewSalesOrderDetail : " + e.getMessage());
+        }
+
+        return null;
+    }
+
+    @Override
+    public void render(Salesorder s) {
+        Query q = null;
+        entityManager = entityManagerFactory.createEntityManager();
+        Invoicetype invoice = new Invoicetype();
+
+        try {
+            q = entityManager.createNamedQuery("Invoicetype.findByInvoiceType");
+            q.setParameter("invoiceType", TRAHANG);
+            invoice = (Invoicetype) q.getSingleResult();
+
+            s.setInvoiceType(invoice);
+            entityManager.persist(s);
+        } catch (Exception e) {
+            System.out.println("ERROR Render : " + e.getMessage());
+        }
+
     }
 
 }

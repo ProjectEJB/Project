@@ -17,6 +17,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import model.Salesorder;
+import model.Slsorderdetail;
 
 /**
  *
@@ -42,9 +43,20 @@ public class SalesOrderController {
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public List<Salesorder> listProducts() {
+    public List<Salesorder> listSales() {
         List<Salesorder> rs = new ArrayList<Salesorder>();
         rs = saleSessionRemote.FindAll();
+        return rs;
+    }
+
+    @POST
+    @Path("/detail")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<Slsorderdetail>
+            listSlsDetail(String OrderNo) {
+        List<Slsorderdetail> rs = new ArrayList<Slsorderdetail>();
+        rs = saleSessionRemote.viewSalesOrderDetail(OrderNo);
         return rs;
     }
 
@@ -54,6 +66,14 @@ public class SalesOrderController {
     @Consumes(MediaType.APPLICATION_JSON)
     public Salesorder saveItems(Salesorder p) {
         saleSessionRemote.addSaleorder(p);
+        return p;
+    }
+    @POST
+    @Path("/return")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Salesorder render(Salesorder p) {
+        saleSessionRemote.render(p);
         return p;
     }
 

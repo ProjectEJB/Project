@@ -24,10 +24,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author ANHVT
+ * @author Sangvtse61398
  */
 @Entity
 @Table(name = "salesorder")
+@NamedQueries({
+    @NamedQuery(name = "Salesorder.findAll", query = "SELECT s FROM Salesorder s"),
+    @NamedQuery(name = "Salesorder.findByOrderNo", query = "SELECT s FROM Salesorder s WHERE s.orderNo = :orderNo"),
+    @NamedQuery(name = "Salesorder.findByCustID", query = "SELECT s FROM Salesorder s WHERE s.custID = :custID"),
+    @NamedQuery(name = "Salesorder.findByDebt", query = "SELECT s FROM Salesorder s WHERE s.debt = :debt"),
+    @NamedQuery(name = "Salesorder.findByDescription", query = "SELECT s FROM Salesorder s WHERE s.description = :description"),
+    @NamedQuery(name = "Salesorder.findByOrderDate", query = "SELECT s FROM Salesorder s WHERE s.orderDate = :orderDate"),
+    @NamedQuery(name = "Salesorder.findByOrderDisc", query = "SELECT s FROM Salesorder s WHERE s.orderDisc = :orderDisc"),
+    @NamedQuery(name = "Salesorder.findByOverdueDate", query = "SELECT s FROM Salesorder s WHERE s.overdueDate = :overdueDate"),
+    @NamedQuery(name = "Salesorder.findByPayment", query = "SELECT s FROM Salesorder s WHERE s.payment = :payment"),
+    @NamedQuery(name = "Salesorder.findByTaxAmt", query = "SELECT s FROM Salesorder s WHERE s.taxAmt = :taxAmt"),
+    @NamedQuery(name = "Salesorder.findByTotalAmt", query = "SELECT s FROM Salesorder s WHERE s.totalAmt = :totalAmt")})
 public class Salesorder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -37,7 +49,7 @@ public class Salesorder implements Serializable {
     @Size(min = 1, max = 50)
     @Column(name = "OrderNo")
     private String orderNo;
-    
+
     @Column(name = "OrderDate")
     @Temporal(TemporalType.DATE)
     private Date orderDate;
@@ -61,7 +73,7 @@ public class Salesorder implements Serializable {
     @Column(name = "Description")
     private String description;
     @JoinColumn(name = "InvoiceType", referencedColumnName = "InvoiceType")
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Invoicetype invoiceType;
 
     public Salesorder() {

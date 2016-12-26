@@ -25,7 +25,9 @@ com\mycompany\CustomerSessionBeanRemote.class
 com\mycompany\CustomerSessionBean.class
 model\Slsorderdetail.class
 model\Invoicetype_.class
+com\mycompany\PaymentSessionBeanRemote.class
 model\Vendor.class
+com\mycompany\PaymentSessionBean.class
 com\mycompany\NewSessionBean.class
 model\Purchaseorddetail.class
 com\mycompany\SaleSession.class

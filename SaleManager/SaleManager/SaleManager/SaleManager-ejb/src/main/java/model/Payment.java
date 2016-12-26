@@ -23,10 +23,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author ANHVT
+ * @author Sangvtse61398
  */
 @Entity
 @Table(name = "payment")
+@NamedQueries({
+    @NamedQuery(name = "Payment.findAll", query = "SELECT p FROM Payment p"),
+    @NamedQuery(name = "Payment.findByPaymentID", query = "SELECT p FROM Payment p WHERE p.paymentID = :paymentID"),
+    @NamedQuery(name = "Payment.findByCustID", query = "SELECT p FROM Payment p WHERE p.custID = :custID"),
+    @NamedQuery(name = "Payment.findByDescription", query = "SELECT p FROM Payment p WHERE p.description = :description"),
+    @NamedQuery(name = "Payment.findByPaymentAmt", query = "SELECT p FROM Payment p WHERE p.paymentAmt = :paymentAmt"),
+    @NamedQuery(name = "Payment.findByPaymentDate", query = "SELECT p FROM Payment p WHERE p.paymentDate = :paymentDate"),
+    @NamedQuery(name = "Payment.findByPaymentNo", query = "SELECT p FROM Payment p WHERE p.paymentNo = :paymentNo"),
+    @NamedQuery(name = "Payment.findBySalesPersonID", query = "SELECT p FROM Payment p WHERE p.salesPersonID = :salesPersonID")})
+
 public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;

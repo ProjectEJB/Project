@@ -20,10 +20,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author ANHVT
+ * @author Sangvtse61398
  */
 @Entity
 @Table(name = "slsorderdetail")
+@NamedQueries({
+    @NamedQuery(name = "Slsorderdetail.findAll", query = "SELECT s FROM Slsorderdetail s"),
+    @NamedQuery(name = "Slsorderdetail.findById", query = "SELECT s FROM Slsorderdetail s WHERE s.id = :id"),
+    @NamedQuery(name = "Slsorderdetail.findByAmount", query = "SELECT s FROM Slsorderdetail s WHERE s.amount = :amount"),
+    @NamedQuery(name = "Slsorderdetail.findByDiscount", query = "SELECT s FROM Slsorderdetail s WHERE s.discount = :discount"),
+    @NamedQuery(name = "Slsorderdetail.findByInvtID", query = "SELECT s FROM Slsorderdetail s WHERE s.invtID = :invtID"),
+    @NamedQuery(name = "Slsorderdetail.findByOrderNo", query = "SELECT s FROM Slsorderdetail s WHERE s.orderNo = :orderNo"),
+    @NamedQuery(name = "Slsorderdetail.findByQty", query = "SELECT s FROM Slsorderdetail s WHERE s.qty = :qty"),
+    @NamedQuery(name = "Slsorderdetail.findBySalesPrice", query = "SELECT s FROM Slsorderdetail s WHERE s.salesPrice = :salesPrice"),
+    @NamedQuery(name = "Slsorderdetail.findByTaxAmt", query = "SELECT s FROM Slsorderdetail s WHERE s.taxAmt = :taxAmt")})
+
 public class Slsorderdetail implements Serializable {
 
     private static final long serialVersionUID = 1L;

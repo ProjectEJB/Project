@@ -22,10 +22,15 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author ANHVT
+ * @author Sangvtse61398
  */
 @Entity
 @Table(name = "invoicetype")
+@NamedQueries({
+    @NamedQuery(name = "Invoicetype.findAll", query = "SELECT i FROM Invoicetype i"),
+    @NamedQuery(name = "Invoicetype.findByInvoiceType", query = "SELECT i FROM Invoicetype i WHERE i.invoiceType = :invoiceType"),
+    @NamedQuery(name = "Invoicetype.findByTypeName", query = "SELECT i FROM Invoicetype i WHERE i.typeName = :typeName")})
+
 public class Invoicetype implements Serializable {
 
     private static final long serialVersionUID = 1L;

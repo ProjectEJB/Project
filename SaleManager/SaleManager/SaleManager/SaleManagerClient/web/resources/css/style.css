@@ -252,27 +252,6 @@ ul.top-menu > li > .logout {
     padding-bottom: 10px;
 }
 
-/*LEFT NAVIGATION ICON*/
-.dcjq-icon {
-    height:17px;
-    width:17px;
-    display:inline-block;
-    background: url("../img/nav-expand.png") no-repeat top;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    position:absolute;
-    right:10px;
-    top:15px;
-}
-.active .dcjq-icon {
-    background: url("../img/nav-expand.png") no-repeat bottom;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-}
-/*---*/
-
 .nav-collapse.collapse {
     display: inline;
 }
@@ -510,7 +489,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     /* Safari and Chrome */
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
-    };
+    }
     }
 
 .dropdown-menu.extended li p {
@@ -694,15 +673,6 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-top-color: #000;
 }
 
-.log-arrow-up {
-    background: url("../img/arrow-up.png") no-repeat;
-    width: 20px;
-    height: 11px;
-    position: absolute;
-    right: 20px;
-    top: -10px;
-}
-
 /*----*/
 
 .notify-arrow {
@@ -817,7 +787,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	font-size: 11px;
 }
 
-.ds p > muted {
+.ds p > .muted {
 	font-size: 9px;
 	text-transform: uppercase;
 	font-style: italic;
@@ -1363,7 +1333,7 @@ PANELS CONFIGURATIONS
 #blog-bg {
 	background: url(../img/blog-bg.jpg) no-repeat center top;
 	margin-top: -15px;
-	background-attachment: relative;
+	/*background-attachment: relative;*/
 	background-position: center center;
 	min-height: 150px;
 	width: 100%;
@@ -1488,7 +1458,7 @@ PANELS CONFIGURATIONS
 #profile-01 {
 	background: url(../img/profile-01.jpg) no-repeat center top;
 	margin-top: -15px;
-	background-attachment: relative;
+	/*background-attachment: relative;*/
 	background-position: center center;
 	min-height: 150px;
 	width: 100%;
@@ -1536,7 +1506,7 @@ PANELS CONFIGURATIONS
 #profile-02 {
 	background: url(../img/profile-02.jpg) no-repeat center top;
 	margin-top: -15px;
-	background-attachment: relative;
+	/*background-attachment: relative;*/
 	background-position: center center;
 	min-height: 200px;
 	width: 100%;
@@ -2101,7 +2071,7 @@ label {
     /* Safari and Chrome */
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
-    };
+    }
     }
 
 

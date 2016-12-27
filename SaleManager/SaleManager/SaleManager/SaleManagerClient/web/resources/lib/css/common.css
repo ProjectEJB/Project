@@ -1,0 +1,68 @@
+.product-image{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.search-btn{
+    margin-left:5%;
+}
+
+.actionBtn{
+    width: 45px;
+    height: 30px;
+    padding: 3px 13px;
+    border-radius: 10%;
+    font-size: 140%;
+}
+.form-inline .form-control{
+    width: 100%;
+}
+ul.top-menu > li:hover > a.logout, ul.top-menu > li:hover > a.logout{
+    background: red!important;
+    color: white!important;
+}
+.input-group-btn:last-child > .btn.myBtnDate{
+    margin-left: -10px;
+}
+table thead th {
+    text-align: center;
+}
+.status{
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.sold{
+    background: #c9302c;
+}
+.onStock{
+    background: #449d44;
+}
+
+
+.billDetailLabel {
+    padding-top: 10px;
+    font-weight: 900;
+}
+
+.backToView{
+    border-radius: 5px;
+    padding: 3px 20px 3px 25px;
+    color: white;
+    font-size: 80%;
+}
+.smallQuan{
+    background: red;
+}
+
+/*.datepicker.dropdown-menu{*/
+    /*left: 1050px!important;*/
+/*}*/
+/*.datepicker:before{*/
+    /*right: 6px!important;*/
+    /*left: auto!important;*/
+/*}*/
+/*.datepicker:after{*/
+    /*right: 6px!important;*/
+    /*left: auto!important;*/
+/*}*/

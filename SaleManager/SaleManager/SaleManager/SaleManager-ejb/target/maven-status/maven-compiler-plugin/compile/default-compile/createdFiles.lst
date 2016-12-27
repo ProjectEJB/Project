@@ -16,8 +16,10 @@ model\User.class
 model\Inventory.class
 model\Inventory_.class
 model\Payment_.class
+com\mycompany\PurchaseOrderSessionBean.class
 model\Slsorderdetail_.class
 model\Salesorder_.class
+com\mycompany\PurchaseOrderSessionBeanRemote.class
 com\mycompany\InventorySessionBeanRemote.class
 model\Purchaseorder.class
 model\Purchaseorddetail_.class

@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -23,6 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "purchaseorder")
+
 public class Purchaseorder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -31,22 +35,21 @@ public class Purchaseorder implements Serializable {
     @NotNull
     @Column(name = "OrderNo")
     private Integer orderNo;
-    @Size(max = 50)
-    @Column(name = "InvtID")
-    private String invtID;
-    @Column(name = "Qty")
-    private Integer qty;
-    @Column(name = "PurchasePrice")
-    private Long purchasePrice;
-    @Size(max = 50)
-    @Column(name = "StockID")
-    private String stockID;
-    @Column(name = "QtyProm")
-    private Integer qtyProm;
-    @Column(name = "QtyPromAmt")
-    private Integer qtyPromAmt;
-    @Column(name = "AmtProm")
-    private Long amtProm;
+    @Column(name = "OrderDate")
+    @Temporal(TemporalType.DATE)
+    private Date orderDate;
+    @Column(name = "OrderType")
+    private String orderType;
+    @Column(name = "OverdueDate")
+    @Temporal(TemporalType.DATE)
+    private Date overdueDate;
+    @Column(name = "DiscAmt")
+    private Long discAmt;
+    @Column(name = "PromAmt")
+    private Long proAmt;
+    @Column(name = "ComAmt")
+    private Long comAmt;
+
     @Column(name = "TaxAmt")
     private Long taxAmt;
     @Column(name = "Amount")
@@ -67,60 +70,52 @@ public class Purchaseorder implements Serializable {
         this.orderNo = orderNo;
     }
 
-    public String getInvtID() {
-        return invtID;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setInvtID(String invtID) {
-        this.invtID = invtID;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public Integer getQty() {
-        return qty;
+    public String getOrderType() {
+        return orderType;
     }
 
-    public void setQty(Integer qty) {
-        this.qty = qty;
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
     }
 
-    public Long getPurchasePrice() {
-        return purchasePrice;
+    public Date getOverdueDate() {
+        return overdueDate;
     }
 
-    public void setPurchasePrice(Long purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public void setOverdueDate(Date overdueDate) {
+        this.overdueDate = overdueDate;
     }
 
-    public String getStockID() {
-        return stockID;
+    public Long getDiscAmt() {
+        return discAmt;
     }
 
-    public void setStockID(String stockID) {
-        this.stockID = stockID;
+    public void setDiscAmt(Long discAmt) {
+        this.discAmt = discAmt;
     }
 
-    public Integer getQtyProm() {
-        return qtyProm;
+    public Long getProAmt() {
+        return proAmt;
     }
 
-    public void setQtyProm(Integer qtyProm) {
-        this.qtyProm = qtyProm;
+    public void setProAmt(Long proAmt) {
+        this.proAmt = proAmt;
     }
 
-    public Integer getQtyPromAmt() {
-        return qtyPromAmt;
+    public Long getComAmt() {
+        return comAmt;
     }
 
-    public void setQtyPromAmt(Integer qtyPromAmt) {
-        this.qtyPromAmt = qtyPromAmt;
-    }
-
-    public Long getAmtProm() {
-        return amtProm;
-    }
-
-    public void setAmtProm(Long amtProm) {
-        this.amtProm = amtProm;
+    public void setComAmt(Long comAmt) {
+        this.comAmt = comAmt;
     }
 
     public Long getTaxAmt() {
@@ -138,6 +133,8 @@ public class Purchaseorder implements Serializable {
     public void setAmount(Long amount) {
         this.amount = amount;
     }
+
+  
 
     @Override
     public int hashCode() {

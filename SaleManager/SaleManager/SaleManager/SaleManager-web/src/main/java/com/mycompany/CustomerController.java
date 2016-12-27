@@ -11,10 +11,16 @@ import javax.ejb.EJB;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriInfo;
 import model.Customer;
 
 /**
@@ -33,12 +39,13 @@ public class CustomerController {
         e.printStackTrace();
     }
   }
-  @GET
+    @GET
     @Path("/sayHello")
-    @Produces("text/plain")
-    public String sayHello() {
-        return "Hello";
+    @Produces(MediaType.APPLICATION_JSON)
+    public String sayHello(@QueryParam("userName") String userId) {
+      return userId;   
     }
+    
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -48,4 +55,39 @@ public class CustomerController {
         result = customerSessionBeanRemote.getCustomer();
         return result;
     }  
+    
+    @GET
+    @Path("/detail")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Customer getCustomer(@QueryParam("id") String userId){
+        Customer c=new Customer();
+        
+        c=customerSessionBeanRemote.getDetail(userId);
+        if(c!=null){
+            return c;
+        }
+        else{
+           return null;
+        }
+    } 
+    
+    @POST
+    @Path("/addCustomer")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public boolean addCustomer(Customer c){
+        boolean b;
+        b=customerSessionBeanRemote.addCustomer(c);
+        return b;
+    }
+    @DELETE
+    @Path("/deleteCustomer")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public boolean deleteCustomer(@QueryParam("id") String id){
+        boolean b;
+        b=customerSessionBeanRemote.deleteCustomer(id);
+        return b;
+    }
 }

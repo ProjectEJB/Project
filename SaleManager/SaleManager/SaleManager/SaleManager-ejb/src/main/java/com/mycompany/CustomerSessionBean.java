@@ -30,19 +30,37 @@ public class CustomerSessionBean implements CustomerSessionBeanRemote {
 
     @Override
     public boolean addCustomer(Customer c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            entityManager =entityManagerFactory.createEntityManager();
+            entityManager.persist(c);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
     public boolean deleteCustomer(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            entityManager =entityManagerFactory.createEntityManager();
+            Customer c =entityManager.find(Customer.class, id);
+            entityManager.remove(c);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
     public Customer getDetail(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+        entityManager =entityManagerFactory.createEntityManager();
+        Customer c= (Customer) entityManager.createNamedQuery("Customer.findByCusID").setParameter("custID", id).getSingleResult();
+        return c;
+        }catch(Exception e){
+            return null;
+        }       
     }
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    
 }

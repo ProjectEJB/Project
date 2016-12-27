@@ -20,7 +20,9 @@
 <link href="<c:url value="/resources/css/dataTables.bootstrap4.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/responsive.bootstrap.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
-
+<script src="<c:url value="resources/js/jquery-3.1.1.min.js" />"></script>
+<script src="<c:url value="resources/jquery-ui/jquery-ui.min.js" />"></script>
+<script src="<c:url value="resources/js/mustache.js" />"></script>
 <script language="JavaScript">
     var contextPath = "${pageContext.request.contextPath}";
 </script>

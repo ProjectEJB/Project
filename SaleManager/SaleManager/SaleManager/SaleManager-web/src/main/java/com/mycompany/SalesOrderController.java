@@ -56,7 +56,7 @@ public class SalesOrderController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public List<Slsorderdetail>
-            listSlsDetail(String OrderNo) {
+            listSlsDetail(@QueryParam("OrderNo") String OrderNo) {
         List<Slsorderdetail> rs = new ArrayList<Slsorderdetail>();
         rs = saleSessionRemote.viewSalesOrderDetail(OrderNo);
         return rs;

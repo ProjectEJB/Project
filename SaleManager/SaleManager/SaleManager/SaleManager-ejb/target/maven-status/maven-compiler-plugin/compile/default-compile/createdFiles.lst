@@ -1,9 +1,11 @@
 model\Stktransdetail_.class
 model\Unit_.class
 model\Vendor_.class
+com\mycompany\SalepersonSessionBeanRemote.class
 model\User_.class
 model\Purchaseorder_.class
 model\Saleperson.class
+com\mycompany\InventorySessionBean.class
 model\Unit.class
 model\Stktransdetail.class
 model\Customer_.class
@@ -16,6 +18,7 @@ model\Inventory_.class
 model\Payment_.class
 model\Slsorderdetail_.class
 model\Salesorder_.class
+com\mycompany\InventorySessionBeanRemote.class
 model\Purchaseorder.class
 model\Purchaseorddetail_.class
 com\mycompany\SaleSessionRemote.class
@@ -29,5 +32,6 @@ com\mycompany\PaymentSessionBeanRemote.class
 model\Vendor.class
 com\mycompany\PaymentSessionBean.class
 com\mycompany\NewSessionBean.class
+com\mycompany\SalepersonSessionBean.class
 model\Purchaseorddetail.class
 com\mycompany\SaleSession.class

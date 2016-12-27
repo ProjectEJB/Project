@@ -15,26 +15,24 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.UriInfo;
 import model.Customer;
+import model.Saleperson;
 
 /**
  *
  * @author ANHVT
  */
-@Path("/customer")
-public class CustomerController {
-    @EJB
-    private CustomerSessionBeanRemote customerSessionBeanRemote;
-    public CustomerController() {
+@Path("/saleperson")
+public class SalepersonController {
+   @EJB
+    private SalepersonSessionBeanRemote salepersonSessionBeanRemote;
+    public SalepersonController() {
     try {
-        String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/CustomerSessionBean!com.mycompany.CustomerSessionBeanRemote";
-        customerSessionBeanRemote = (CustomerSessionBeanRemote) InitialContext.doLookup(lookupName);
+        String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/SalepersonSessionBean!com.mycompany.SalepersonSessionBeanRemote";
+        salepersonSessionBeanRemote = (SalepersonSessionBeanRemote) InitialContext.doLookup(lookupName);
     } catch (NamingException e) {
         e.printStackTrace();
     }
@@ -50,9 +48,9 @@ public class CustomerController {
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public List<Customer> listProduct() {
-        List<Customer> result = new ArrayList<>();
-        result = customerSessionBeanRemote.getCustomer();
+    public List<Saleperson> listProduct() {
+        List<Saleperson> result = new ArrayList<>();
+        result = salepersonSessionBeanRemote.getSaleperson();
         return result;
     }  
     
@@ -60,10 +58,10 @@ public class CustomerController {
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Customer getCustomer(@QueryParam("id") String userId){
-        Customer c=new Customer();
+    public Saleperson getCustomer(@QueryParam("id") String userId){
+        Saleperson c=new Saleperson();
         
-        c=customerSessionBeanRemote.getDetail(userId);
+        c=salepersonSessionBeanRemote.getDetail(userId);
         if(c!=null){
             return c;
         }
@@ -73,21 +71,21 @@ public class CustomerController {
     } 
     
     @POST
-    @Path("/addCustomer")
+    @Path("/addSaleperson")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean addCustomer(Customer c){
+    public boolean addCustomer(Saleperson c){
         boolean b;
-        b=customerSessionBeanRemote.addCustomer(c);
+        b=salepersonSessionBeanRemote.addSaleperson(c);
         return b;
     }
     @DELETE
-    @Path("/deleteCustomer")
+    @Path("/deleteSaleperson")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public boolean deleteCustomer(@QueryParam("id") String id){
         boolean b;
-        b=customerSessionBeanRemote.deleteCustomer(id);
+        b=salepersonSessionBeanRemote.deleteSaleperson(id);
         return b;
-    }
+    } 
 }

@@ -11,25 +11,26 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import model.Customer;
+import model.Saleperson;
 
 /**
  *
  * @author ANHVT
  */
 @Stateless
-public class CustomerSessionBean implements CustomerSessionBeanRemote {
+public class SalepersonSessionBean implements SalepersonSessionBeanRemote {
     @PersistenceUnit(unitName = "SaleManagerPU")
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
     @Override
-    public List<Customer> getCustomer() {
+    public List<Saleperson> getSaleperson() {
         entityManager =entityManagerFactory.createEntityManager();
-        List<Customer> result=entityManager.createQuery("from Customer", Customer.class).getResultList();
+        List<Saleperson> result=entityManager.createQuery("from Saleperson", Saleperson.class).getResultList();
         return result;
     }
 
     @Override
-    public boolean addCustomer(Customer c) {
+    public boolean addSaleperson(Saleperson c) {
         try {
             entityManager =entityManagerFactory.createEntityManager();
             entityManager.persist(c);
@@ -40,10 +41,10 @@ public class CustomerSessionBean implements CustomerSessionBeanRemote {
     }
 
     @Override
-    public boolean deleteCustomer(String id) {
+    public boolean deleteSaleperson(String id) {
         try {
             entityManager =entityManagerFactory.createEntityManager();
-            Customer c =entityManager.find(Customer.class, id);
+            Saleperson c =entityManager.find(Saleperson.class, id);
             entityManager.remove(c);
             return true;
         } catch (Exception e) {
@@ -52,15 +53,16 @@ public class CustomerSessionBean implements CustomerSessionBeanRemote {
     }
 
     @Override
-    public Customer getDetail(String id) {
+    public Saleperson getDetail(String id) {
         try{
         entityManager =entityManagerFactory.createEntityManager();
-        Customer c= (Customer) entityManager.createNamedQuery("Customer.findByCusID").setParameter("custID", id).getSingleResult();
+        Saleperson c= (Saleperson) entityManager.createNamedQuery("Saleperson.findByID").setParameter("id", id).getSingleResult();
         return c;
         }catch(Exception e){
             return null;
-        }       
+        } 
     }
 
-    
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
 }

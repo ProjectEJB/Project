@@ -24,6 +24,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "customer")
+@NamedQueries({
+    @NamedQuery(name = "Customer.findByCusID", query = "SELECT c FROM Customer c WHERE c.custID = :custID")
+})
 public class Customer implements Serializable {
 
     @Column(name = "Amount")

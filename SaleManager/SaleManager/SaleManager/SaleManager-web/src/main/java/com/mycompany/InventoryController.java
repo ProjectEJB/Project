@@ -15,26 +15,23 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.UriInfo;
-import model.Customer;
+import model.Inventory;
 
 /**
  *
  * @author ANHVT
  */
-@Path("/customer")
-public class CustomerController {
+@Path("/inventory")
+public class InventoryController {
     @EJB
-    private CustomerSessionBeanRemote customerSessionBeanRemote;
-    public CustomerController() {
+    private InventorySessionBeanRemote inventorySessionBeanRemote;
+    public InventoryController() {
     try {
-        String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/CustomerSessionBean!com.mycompany.CustomerSessionBeanRemote";
-        customerSessionBeanRemote = (CustomerSessionBeanRemote) InitialContext.doLookup(lookupName);
+        String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/InventorySessionBean!com.mycompany.InventorySessionBeanRemote";
+        inventorySessionBeanRemote = (InventorySessionBeanRemote) InitialContext.doLookup(lookupName);
     } catch (NamingException e) {
         e.printStackTrace();
     }
@@ -50,9 +47,9 @@ public class CustomerController {
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public List<Customer> listProduct() {
-        List<Customer> result = new ArrayList<>();
-        result = customerSessionBeanRemote.getCustomer();
+    public List<Inventory> listProduct() {
+        List<Inventory> result = new ArrayList<>();
+        result = inventorySessionBeanRemote.getInventory();
         return result;
     }  
     
@@ -60,10 +57,10 @@ public class CustomerController {
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Customer getCustomer(@QueryParam("id") String userId){
-        Customer c=new Customer();
+    public Inventory getInventory(@QueryParam("id") String invtID){
+        Inventory c=new Inventory();
         
-        c=customerSessionBeanRemote.getDetail(userId);
+        c=inventorySessionBeanRemote.getDetail(invtID);
         if(c!=null){
             return c;
         }
@@ -73,21 +70,21 @@ public class CustomerController {
     } 
     
     @POST
-    @Path("/addCustomer")
+    @Path("/addInventory")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean addCustomer(Customer c){
+    public boolean addInventory(Inventory c){
         boolean b;
-        b=customerSessionBeanRemote.addCustomer(c);
+        b=inventorySessionBeanRemote.addInventory(c);
         return b;
     }
     @DELETE
-    @Path("/deleteCustomer")
+    @Path("/deleteInventory")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean deleteCustomer(@QueryParam("id") String id){
+    public boolean deleteInventory(@QueryParam("id") String id){
         boolean b;
-        b=customerSessionBeanRemote.deleteCustomer(id);
+        b=inventorySessionBeanRemote.deleteInventory(id);
         return b;
     }
 }

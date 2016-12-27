@@ -1,20 +1,24 @@
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBean.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SaleSession.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Purchaseorddetail.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Unit.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Customer.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Invoicetype.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Payment.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Saleperson.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Inventory.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SaleSessionRemote.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Stktransdetail.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\User.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\CustomerSessionBean.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Purchaseorder.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Salesorder.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\NewSessionBean.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Vendor.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\CustomerSessionBeanRemote.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Slsorderdetail.java
-C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBeanRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Customer.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBean.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBeanRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\CustomerSessionBean.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SaleSession.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Stktransdetail.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Slsorderdetail.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Salesorder.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Invoicetype.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SalepersonSessionBeanRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Purchaseorddetail.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Inventory.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\CustomerSessionBeanRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\InventorySessionBeanRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SaleSessionRemote.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\NewSessionBean.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Saleperson.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\InventorySessionBean.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Payment.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Purchaseorder.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Unit.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Vendor.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SalepersonSessionBean.java
+E:\New folder\PROJECTJAVA\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\User.java

@@ -38,7 +38,7 @@ public class PaymentSessionBean implements PaymentSessionBeanRemote {
     public List<Payment> listPayent() {
         entityManager = entityManagerFactory.createEntityManager();
         try {
-            List<Payment> result = entityManager.createQuery("Payment.findAll",
+            List<Payment> result = entityManager.createNamedQuery("Payment.findAll",
                     Payment.class).getResultList();
             return result;
 
@@ -53,7 +53,7 @@ public class PaymentSessionBean implements PaymentSessionBeanRemote {
         entityManager = entityManagerFactory.createEntityManager();
 
         try {
-            Payment result = entityManager.createQuery("Payment.findByPaymentID",
+            Payment result = entityManager.createNamedQuery("Payment.findByPaymentID",
                     Payment.class).getSingleResult();
 
             return result;

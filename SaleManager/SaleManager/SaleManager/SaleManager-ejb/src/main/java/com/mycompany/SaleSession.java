@@ -50,9 +50,13 @@ public class SaleSession implements SaleSessionRemote {
     @Override
     public List<Slsorderdetail> viewSalesOrderDetail(String OrderNo) {
         entityManager = entityManagerFactory.createEntityManager();
+        Query q=null;
         try {
-            List<Slsorderdetail> result = entityManager.createNamedQuery("Slsorderdetail.findByOrderNo",
-                    Slsorderdetail.class).getResultList();
+            q= entityManager.createNamedQuery("Slsorderdetail.findByOrderNo",
+                    Slsorderdetail.class);
+            q.setParameter("orderNo", OrderNo);
+            List<Slsorderdetail> result =(List<Slsorderdetail>) q.getResultList();
+            
             return result;
         } catch (Exception e) {
 

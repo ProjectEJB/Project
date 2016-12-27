@@ -51,7 +51,7 @@ public class SalesOrderController {
         return rs;
     }
 
-    @POST
+    @GET
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)

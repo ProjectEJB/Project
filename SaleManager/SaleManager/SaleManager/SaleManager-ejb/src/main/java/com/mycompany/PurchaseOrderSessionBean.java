@@ -35,7 +35,7 @@ public class PurchaseOrderSessionBean implements PurchaseOrderSessionBeanRemote 
         entityManager = entityManagerFactory.createEntityManager();
         try {
             List<Purchaseorder> result =entityManager.createNamedQuery("Purchaseorder.findByOrderType", Purchaseorder.class)
-                    .setParameter("InvoiceType", "NP").getResultList();
+                    .setParameter("orderType", "PO").getResultList();
             return result;
         } catch (Exception e) {
             System.out.println("ERROR FindAll : " + e.getMessage());

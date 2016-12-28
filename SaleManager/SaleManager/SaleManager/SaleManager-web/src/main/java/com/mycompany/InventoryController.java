@@ -26,17 +26,26 @@ import model.Inventory;
  */
 @Path("/inventory")
 public class InventoryController {
+
     @EJB
     private InventorySessionBeanRemote inventorySessionBeanRemote;
+
     public InventoryController() {
-    try {
-        String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/InventorySessionBean!com.mycompany.InventorySessionBeanRemote";
-        inventorySessionBeanRemote = (InventorySessionBeanRemote) InitialContext.doLookup(lookupName);
-    } catch (NamingException e) {
-        e.printStackTrace();
+        try {
+            String lookupName = "java:global/SaleManager-ear/SaleManager-ejb-1.0-SNAPSHOT/InventorySessionBean!com.mycompany.InventorySessionBeanRemote";
+            inventorySessionBeanRemote = (InventorySessionBeanRemote) InitialContext.doLookup(lookupName);
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
     }
-  }
-   
+
+    @GET
+    @Path("/sayHello")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String sayHello(@QueryParam("userName") String userId) {
+        return userId;
+    }
+
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,40 +54,40 @@ public class InventoryController {
         List<Inventory> result = new ArrayList<>();
         result = inventorySessionBeanRemote.getInventory();
         return result;
-    }  
-    
+    }
+
     @GET
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Inventory getInventory(@QueryParam("id") String invtID){
-        Inventory c=new Inventory();
-        
-        c=inventorySessionBeanRemote.getDetail(invtID);
-        if(c!=null){
+    public Inventory getInventory(@QueryParam("id") String invtID) {
+        Inventory c = new Inventory();
+
+        c = inventorySessionBeanRemote.getDetail(invtID);
+        if (c != null) {
             return c;
+        } else {
+            return null;
         }
-        else{
-           return null;
-        }
-    } 
-    
+    }
+
     @POST
     @Path("/addInventory")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean addInventory(Inventory c){
+    public boolean addInventory(Inventory c) {
         boolean b;
-        b=inventorySessionBeanRemote.addInventory(c);
+        b = inventorySessionBeanRemote.addInventory(c);
         return b;
     }
+
     @DELETE
     @Path("/deleteInventory")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean deleteInventory(@QueryParam("id") String id){
+    public boolean deleteInventory(@QueryParam("id") String id) {
         boolean b;
-        b=inventorySessionBeanRemote.deleteInventory(id);
+        b = inventorySessionBeanRemote.deleteInventory(id);
         return b;
     }
 }

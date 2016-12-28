@@ -27,4 +27,5 @@ public interface PurchaseOrderSessionBeanRemote {
     List<Purchaseorddetail> viewPurchaseOrderDetail(String OrderNo);
 
     void render(Purchaseorder s);
+    List<Purchaseorder> listRender();
 }

@@ -34,28 +34,13 @@ public class PurchaseOrderSessionBean implements PurchaseOrderSessionBeanRemote 
     public List FindAll() {
         entityManager = entityManagerFactory.createEntityManager();
         try {
-            List<Purchaseorder> result = entityManager.createNamedQuery("Purchaseorder.findAll",
-                    Purchaseorder.class).getResultList();
+            List<Purchaseorder> result =entityManager.createNamedQuery("Purchaseorder.findByOrderType", Purchaseorder.class)
+                    .setParameter("orderType", "PO").getResultList();
             return result;
         } catch (Exception e) {
             System.out.println("ERROR FindAll : " + e.getMessage());
         }
         return null;
-    }
-
-    @Override
-    public List<Purchaseorddetail> viewPurchaseOrderDetail(String OrderNo) {
-        entityManager = entityManagerFactory.createEntityManager();
-
-        try {
-//           
-            List<Purchaseorddetail> result = entityManager.createNamedQuery("Slsorderdetail.findByOrderNo", Purchaseorddetail.class).setParameter("orderNo", OrderNo).getResultList();
-            return result;
-        } catch (Exception e) {
-
-            System.out.println("ERROR viewSalesOrderDetail : " + e.getMessage());
-            return null;
-        }
     }
 
     @Override
@@ -76,6 +61,26 @@ public class PurchaseOrderSessionBean implements PurchaseOrderSessionBeanRemote 
         entityManager = entityManagerFactory.createEntityManager();
         b.setOrderType("PO");
         entityManager.persist(b);
+    }
+
+    @Override
+    public List<Purchaseorder> listRender() {
+        entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+//           
+            List<Purchaseorder> result = entityManager.createNamedQuery("Purchaseorder.findByOrderType", Purchaseorder.class).setParameter("orderType", "PR").getResultList();
+            return result;
+        } catch (Exception e) {
+
+            System.out.println("ERROR viewSalesOrderDetail : " + e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Purchaseorddetail> viewPurchaseOrderDetail(String OrderNo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

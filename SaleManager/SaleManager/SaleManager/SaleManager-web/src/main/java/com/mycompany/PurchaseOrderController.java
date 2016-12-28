@@ -52,6 +52,16 @@ public class PurchaseOrderController {
     }
 
     @GET
+    @Path("/listRender")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<Purchaseorder> listRender() {
+        List<Purchaseorder> rs = new ArrayList<Purchaseorder>();
+        rs = purchaseOrderSessionBeanRemote.listRender();
+        return rs;
+    }
+
+    @GET
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -70,7 +80,7 @@ public class PurchaseOrderController {
         purchaseOrderSessionBeanRemote.addPurchaseOrder(p);
         return p;
     }
-
+ 
     @POST
     @Path("/return")
     @Produces(MediaType.APPLICATION_JSON)

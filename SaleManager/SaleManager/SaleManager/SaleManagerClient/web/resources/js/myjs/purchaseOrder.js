@@ -94,21 +94,6 @@ $(document).ready(function () {
             }
         });
     }
-//    function getListProduct() {
-//        $.ajax({
-//            dataType: "json",
-//            type: 'GET',
-//            url: "/SaleManager-web/SaleManager/purchaseorder/list",
-//            contentType: "application/json",
-//            success: function (data) {
-//                $("#products").empty();
-//                showItem(data);
-//            },
-//            error: function (data) {
-//
-//            }
-//        });
-//    }
     function proccessAction() {
         $('#btnAdd').click(function () {
 

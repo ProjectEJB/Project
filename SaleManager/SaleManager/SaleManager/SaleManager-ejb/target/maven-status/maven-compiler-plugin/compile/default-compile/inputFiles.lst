@@ -1,6 +1,7 @@
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PurchaseOrderSessionBeanRemote.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\InventorySessionBeanRemote.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Purchaseorddetail.java
+C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\UserSessionBean.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SalepersonSessionBean.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Invoicetype.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SalepersonSessionBeanRemote.java
@@ -9,6 +10,7 @@ C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleMana
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\NewSessionBean.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\model\Vendor.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBeanRemote.java
+C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\UserSessionBeanRemote.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PaymentSessionBean.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\SaleSession.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-ejb\src\main\java\com\mycompany\PurchaseOrderSessionBean.java

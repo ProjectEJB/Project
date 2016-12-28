@@ -34,8 +34,8 @@ public class PurchaseOrderSessionBean implements PurchaseOrderSessionBeanRemote 
     public List FindAll() {
         entityManager = entityManagerFactory.createEntityManager();
         try {
-            List<Salesorder> result = entityManager.createNamedQuery("Purchaseorder.findAll",
-                    Salesorder.class).getResultList();
+            List<Purchaseorder> result = entityManager.createNamedQuery("Purchaseorder.findAll",
+                    Purchaseorder.class).getResultList();
             return result;
         } catch (Exception e) {
             System.out.println("ERROR FindAll : " + e.getMessage());

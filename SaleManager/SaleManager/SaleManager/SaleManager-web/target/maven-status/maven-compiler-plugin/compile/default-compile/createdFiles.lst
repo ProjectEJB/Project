@@ -2,4 +2,5 @@ com\mycompany\InventoryController.class
 com\mycompany\CustomerController.class
 com\mycompany\SalesOrderController.class
 com\mycompany\PaymentController.class
+com\mycompany\PurchaseOrderController.class
 com\mycompany\SalepersonController.class

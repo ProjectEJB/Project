@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -27,6 +28,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "purchaseorder")
 
+@NamedQueries({
+    @NamedQuery(name = "Purchaseorder.findAll", query = "SELECT p FROM Purchaseorder p"),
+    @NamedQuery(name = "Purchaseorder.findByOrderNo", query = "SELECT p FROM Purchaseorder p WHERE p.orderNo = :orderNo"),
+    @NamedQuery(name = "Purchaseorder.findByAmount", query = "SELECT p FROM Purchaseorder p WHERE p.amount = :amount"),
+    @NamedQuery(name = "Purchaseorder.findByComAmt", query = "SELECT p FROM Purchaseorder p WHERE p.comAmt = :comAmt"),
+    @NamedQuery(name = "Purchaseorder.findByDiscAmt", query = "SELECT p FROM Purchaseorder p WHERE p.discAmt = :discAmt"),
+    @NamedQuery(name = "Purchaseorder.findByOrderDate", query = "SELECT p FROM Purchaseorder p WHERE p.orderDate = :orderDate"),
+    @NamedQuery(name = "Purchaseorder.findByOrderType", query = "SELECT p FROM Purchaseorder p WHERE p.orderType = :orderType"),
+    @NamedQuery(name = "Purchaseorder.findByOverdueDate", query = "SELECT p FROM Purchaseorder p WHERE p.overdueDate = :overdueDate"),
+    @NamedQuery(name = "Purchaseorder.findByPromAmt", query = "SELECT p FROM Purchaseorder p WHERE p.promAmt = :promAmt"),
+    @NamedQuery(name = "Purchaseorder.findByTaxAmt", query = "SELECT p FROM Purchaseorder p WHERE p.taxAmt = :taxAmt")})
 public class Purchaseorder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -35,25 +47,25 @@ public class Purchaseorder implements Serializable {
     @NotNull
     @Column(name = "OrderNo")
     private Integer orderNo;
+    @Column(name = "Amount")
+    private BigInteger amount;
+    @Column(name = "ComAmt")
+    private BigInteger comAmt;
+    @Column(name = "DiscAmt")
+    private BigInteger discAmt;
     @Column(name = "OrderDate")
     @Temporal(TemporalType.DATE)
     private Date orderDate;
+    @Size(max = 255)
     @Column(name = "OrderType")
     private String orderType;
     @Column(name = "OverdueDate")
     @Temporal(TemporalType.DATE)
     private Date overdueDate;
-    @Column(name = "DiscAmt")
-    private Long discAmt;
     @Column(name = "PromAmt")
-    private Long proAmt;
-    @Column(name = "ComAmt")
-    private Long comAmt;
-
+    private BigInteger promAmt;
     @Column(name = "TaxAmt")
-    private Long taxAmt;
-    @Column(name = "Amount")
-    private Long amount;
+    private BigInteger taxAmt;
 
     public Purchaseorder() {
     }
@@ -68,6 +80,30 @@ public class Purchaseorder implements Serializable {
 
     public void setOrderNo(Integer orderNo) {
         this.orderNo = orderNo;
+    }
+
+    public BigInteger getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigInteger amount) {
+        this.amount = amount;
+    }
+
+    public BigInteger getComAmt() {
+        return comAmt;
+    }
+
+    public void setComAmt(BigInteger comAmt) {
+        this.comAmt = comAmt;
+    }
+
+    public BigInteger getDiscAmt() {
+        return discAmt;
+    }
+
+    public void setDiscAmt(BigInteger discAmt) {
+        this.discAmt = discAmt;
     }
 
     public Date getOrderDate() {
@@ -94,47 +130,21 @@ public class Purchaseorder implements Serializable {
         this.overdueDate = overdueDate;
     }
 
-    public Long getDiscAmt() {
-        return discAmt;
+    public BigInteger getPromAmt() {
+        return promAmt;
     }
 
-    public void setDiscAmt(Long discAmt) {
-        this.discAmt = discAmt;
+    public void setPromAmt(BigInteger promAmt) {
+        this.promAmt = promAmt;
     }
 
-    public Long getProAmt() {
-        return proAmt;
-    }
-
-    public void setProAmt(Long proAmt) {
-        this.proAmt = proAmt;
-    }
-
-    public Long getComAmt() {
-        return comAmt;
-    }
-
-    public void setComAmt(Long comAmt) {
-        this.comAmt = comAmt;
-    }
-
-    public Long getTaxAmt() {
+    public BigInteger getTaxAmt() {
         return taxAmt;
     }
 
-    public void setTaxAmt(Long taxAmt) {
+    public void setTaxAmt(BigInteger taxAmt) {
         this.taxAmt = taxAmt;
     }
-
-    public Long getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-  
 
     @Override
     public int hashCode() {
@@ -158,7 +168,7 @@ public class Purchaseorder implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Purchaseorder[ orderNo=" + orderNo + " ]";
+        return "entities.Purchaseorder[ orderNo=" + orderNo + " ]";
     }
-
+    
 }

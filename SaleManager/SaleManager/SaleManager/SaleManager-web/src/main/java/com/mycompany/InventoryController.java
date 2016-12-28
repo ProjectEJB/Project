@@ -36,13 +36,7 @@ public class InventoryController {
         e.printStackTrace();
     }
   }
-    @GET
-    @Path("/sayHello")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String sayHello(@QueryParam("userName") String userId) {
-      return userId;   
-    }
-    
+   
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)

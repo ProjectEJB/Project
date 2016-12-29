@@ -77,7 +77,11 @@
                                                     data-target="#saleModal" data-id="${d}">
                                                 <i class="fa fa-money" aria-hidden="true"></i>
                                             </button>
-
+                                            <button type="button" class="btn btn-round btn-warning sale-btn btn-danger btnDelete " title="Xóa"
+                                                    data-toggle="modal"
+                                                    data-target="#saleModal" data-id="{{invtID}}">                                                   
+                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                            </button>       
                                         </td>
 
                                     </tr>

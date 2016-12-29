@@ -1,47 +1,5 @@
 $(document).ready(function () {
-    function formatList(list) {
-        $.each(list, function (i, value) {
-            value.index = i + 1;
-        });
-    }
-    function action(list) {
-        $('.btnDetail').click(function () {
-            var id = $(this).data('id');
-            var listClub = [];
-            $.each(list, function (i, value) {
-                if (value.id === id) {
-                    listClub = value.listClub;
-                }
-            });
-            $.each(listClub, function (i, value) {
-                console.log("name:" + value.name);
-            });
-            var result = {};
-            result.list = listClub;
-            var template = $('#tplListClub').html();
-            var html = Mustache.render(template, result);
-            $('#listClub').html(html);
-            $("#dialogListClub").dialog({
-                resizable: false,
-                height: "auto",
-                width: "400px",
-                show: {
-                    effect: "blind",
-                    duration: 1000
-                },
-                hide: {
-                    effect: "explode",
-                    duration: 1000
-                },
-                modal: true,
-                buttons: {
-                    Cancel: function () {
-                        $(this).dialog("close");
-                    }
-                }
-            });
-        });
-    }
+    
     function reload() {
         $.ajax({
             dataType: "json",
@@ -51,11 +9,12 @@ $(document).ready(function () {
             success: function (data) {
                 var result = {};
                 result.list = data;
-                formatList(result.list);
+                
                 var template = $('#tplList').html();
                 var html = Mustache.render(template, result);
                 $('#listLeague').html(html);
-                action(result.list);
+                
+                proccessAction();
             },
             error: function (data) {
 
@@ -66,7 +25,7 @@ $(document).ready(function () {
         var id = $("#txtid").val();
         var name = $("#txtname").val();
         var address = $("#txtaddress").val();
-        var status = $("#txtstatus").val();
+        var status = $("#txtstatus option:selected").text();
         var item = {
             "id": id,
             "name": name,
@@ -101,9 +60,35 @@ $(document).ready(function () {
 
             window.location.href="Saleperson.jsp";
         });
-        
+        $('.btnDelete').on('click',function () {
+        var id = $(this).data('id');
+    
+        deleteItem(id);
+        console.log(id);
+        });
     }
     ;
+    
+    function deleteItem(saleID) {
+    var id = saleID;
+    console.log(id);
+    $.ajax({
+        dataType: "json",
+        type: 'DELETE',
+        
+        contentType: "application/json",
+        url: "/SaleManager-web/SaleManager/saleperson/deleteSaleperson?id="+id,
+        success: function (data) {
+
+            var successUrl = "Saleperson.jsp"; // might be a good idea to return this URL in the successful AJAX call
+            window.location.href = successUrl
+
+        },
+        error: function (data) {
+
+        }
+    });
+}
     reload();
     proccessAction();
 });

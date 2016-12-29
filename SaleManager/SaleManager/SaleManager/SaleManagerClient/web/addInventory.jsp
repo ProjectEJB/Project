@@ -55,8 +55,11 @@
                                         <div class="row">
                                             <label class="col-md-4 col-md-offset-1 control-label" for="price">Tên loại hàng</label>
                                             <div class="form-group col-sm-6">
-                                                <input type="text" class="form-control" 
-                                                      id="txtclassName">
+                                                <select class="form-control " id="txtclassName">
+                                                            <option value="1">Điện thoại</option>
+                                                            <option value="2">Quần áo</option>
+                                                            <option value="2">Mỹ phẩm</option>
+                                                <select>
                                             </div>
                                         </div>
                                     </div>

@@ -8,6 +8,7 @@
 
 <html>
     <head>
+        
         <script src="<c:url value="/resources/js/chart-master/Chart.js"/>"></script>
         <c:import url="/resources/common/header.jsp"/>
         <link href="<c:url value="/resources/css/zabuto_calendar.css"/>" rel="stylesheet">
@@ -75,8 +76,12 @@
                                         <div class="row">
                                             <label class="col-md-4 col-md-offset-1 control-label" for="description">Trang thái</label>
                                             <div class="form-group col-sm-6">
-                                                <input type="text" class="form-control" 
-                                                        id="txtstatus">
+<!--                                                <input type="text" class="form-control" 
+                                                        id="txtstatus">-->
+                                                    <select class="form-control " id="txtstatus">
+                                                        <option value="1">Đang hoạt động</option>
+                                                        <option value="2">Không hoạt động</option>
+                                                    <select>
                                             </div>
                                         </div>
                                     </div>

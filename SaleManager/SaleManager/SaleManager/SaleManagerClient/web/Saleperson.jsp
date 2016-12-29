@@ -24,14 +24,14 @@
                     <header>
                         <div class="row">
                             <div class="col-md-6">
-                                <h3> Danh Sách Khách Hàng</h3>
+                                <h3> Danh Sách Nhân Viên</h3>
                             </div>
                             <div class="col-md-6 text-right">
                                 <div class="form-group">
                                     <h3>
 
                                         <ul class="nav pull-right ">
-                                            <li><a class="logout" href="addSaleperson.jsp">Thêm khách hàng</a></li>
+                                            <li><a class="logout" href="addSaleperson.jsp">Thêm nhân viên</a></li>
                                         </ul>
                                     </h3>
                                 </div>
@@ -75,6 +75,11 @@
                                                     data-toggle="modal"
                                                     data-target="#saleModal" data-id="${d}">
                                                 <i class="fa fa-money" aria-hidden="true"></i>
+                                                <button type="button" class="btn btn-round btn-warning sale-btn btn-danger btnDelete " title="Xóa"
+                                                    data-toggle="modal"
+                                                    data-target="#saleModal" data-id="{{id}}">                                                   
+                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                            </button> 
                                             </button>
 
                                         </td>

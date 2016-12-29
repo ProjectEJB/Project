@@ -25,6 +25,13 @@
                     </a>
 
                 </li>
+                <li class="sub-menu">
+                    <a href="SalesOrder.jsp" >
+                        <i class="fa fa-desktop"></i>
+                        <span>Danh sách các hóa đơn bán hàng</span>
+                    </a>
+
+                </li>
 
                 <li class="sub-menu">
                     <a href="Payment.jsp" >
@@ -37,6 +44,42 @@
                     <a href="Render.jsp" >
                         <i class="fa fa-book"></i>
                         <span>Nhà phân phối trả lại hàng cho công ty</span>
+                    </a>
+
+                </li>
+                <li class="sub-menu">
+                    <a href="RenderCus.jsp" >
+                        <i class="fa fa-book"></i>
+                        <span>Khách hàng trả lại hàng cho nhà phân phối</span>
+                    </a>
+
+                </li>
+                <li class="sub-menu">
+                    <a href="Customer.jsp" >
+                        <i class="fa fa-desktop"></i>
+                        <span>Quản lí khách hàng</span>
+                    </a>
+
+                </li>
+
+                <li class="sub-menu">
+                    <a href="Saleperson.jsp" >
+                        <i class="fa fa-cogs"></i>
+                        <span>Quản lí người bán hàng</span>
+                    </a>
+
+                </li>
+                <li class="sub-menu">
+                    <a href="Inventory.jsp" >
+                        <i class="fa fa-book"></i>
+                        <span>Quản lí sản phẩm</span>
+                    </a>
+
+                </li>
+                <li class="sub-menu">
+                    <a href="StockTransfer.jsp" >
+                        <i class="fa fa-desktop"></i>
+                        <span>Quản lý phiếu xuất kho cho nhân viên bán hàng</span>
                     </a>
 
                 </li>

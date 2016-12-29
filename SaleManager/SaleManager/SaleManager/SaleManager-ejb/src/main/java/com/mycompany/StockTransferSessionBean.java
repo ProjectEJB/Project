@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import model.Stktransdetail;
+import model.StockTransfer;
 
 /**
  *
@@ -24,15 +25,15 @@ public class StockTransferSessionBean implements StockTransferSessionBeanRemote 
     private EntityManager entityManager;
 
     @Override
-    public List<Stktransdetail> getStockTransfer() {
+    public List<StockTransfer> getStockTransfer() {
         entityManager = entityManagerFactory.createEntityManager();
-        List<Stktransdetail> result = entityManager.createQuery("from Stktransdetail",
-                Stktransdetail.class).getResultList();
+        List<StockTransfer> result = entityManager.createQuery("from StockTransfer",
+                StockTransfer.class).getResultList();
         return result;
     }
 
     @Override
-    public boolean addStockTransfer(Stktransdetail s) {
+    public boolean addStockTransfer(StockTransfer s) {
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityManager.persist(s);
@@ -46,7 +47,7 @@ public class StockTransferSessionBean implements StockTransferSessionBeanRemote 
     public boolean deleteStockTransfer(String id) {
         try {
             entityManager = entityManagerFactory.createEntityManager();
-            Stktransdetail s = entityManager.find(Stktransdetail.class, id);
+            StockTransfer s = entityManager.find(StockTransfer.class, id);
             entityManager.remove(s);
             return true;
         } catch (Exception e) {
@@ -55,10 +56,10 @@ public class StockTransferSessionBean implements StockTransferSessionBeanRemote 
     }
 
     @Override
-    public Stktransdetail getDetail(String id) {
+    public StockTransfer getDetail(String id) {
         try {
             entityManager = entityManagerFactory.createEntityManager();
-            Stktransdetail s = (Stktransdetail) entityManager.createNamedQuery("Stktransdetail.findByID")
+            StockTransfer s = (StockTransfer) entityManager.createNamedQuery("StockTransfer.findByID")
                     .setParameter("TransID", id).getSingleResult();
             return s;
         } catch (Exception e) {

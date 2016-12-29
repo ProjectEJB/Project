@@ -9,9 +9,9 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Stktransdetail_ {
 
 	public static volatile SingularAttribute<Stktransdetail, String> amount;
+	public static volatile SingularAttribute<Stktransdetail, String> invtID;
 	public static volatile SingularAttribute<Stktransdetail, Integer> transID;
 	public static volatile SingularAttribute<Stktransdetail, Integer> qty;
-	public static volatile SingularAttribute<Stktransdetail, String> invtID;
 
 }
 

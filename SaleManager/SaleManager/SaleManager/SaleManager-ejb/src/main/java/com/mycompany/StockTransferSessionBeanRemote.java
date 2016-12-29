@@ -8,6 +8,7 @@ package com.mycompany;
 import java.util.List;
 import javax.ejb.Remote;
 import model.Stktransdetail;
+import model.StockTransfer;
 
 /**
  *
@@ -15,8 +16,8 @@ import model.Stktransdetail;
  */
 @Remote
 public interface StockTransferSessionBeanRemote {
-    public List<Stktransdetail> getStockTransfer();
-    public boolean addStockTransfer(Stktransdetail s);
+    public List<StockTransfer> getStockTransfer();
+    public boolean addStockTransfer(StockTransfer s);
     public boolean deleteStockTransfer(String id);
-    public Stktransdetail getDetail(String id);
+    public StockTransfer getDetail(String id);
 }

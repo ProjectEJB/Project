@@ -18,7 +18,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import model.Stktransdetail;
+import model.StockTransfer;
+import model.StockTransfer;
 
 /**
  *
@@ -50,8 +51,8 @@ public class StockTransferController {
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public List<Stktransdetail> listProduct() {
-        List<Stktransdetail> result = new ArrayList<>();
+    public List<StockTransfer> listProduct() {
+        List<StockTransfer> result = new ArrayList<>();
         result = stockTransferSessionBeanRemote.getStockTransfer();
         return result;
     }
@@ -60,8 +61,8 @@ public class StockTransferController {
     @Path("/detail")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Stktransdetail getInventory(@QueryParam("id") String transferID) {
-        Stktransdetail s = new Stktransdetail();
+    public StockTransfer getInventory(@QueryParam("id") String transferID) {
+        StockTransfer s = new StockTransfer();
 
         s = stockTransferSessionBeanRemote.getDetail(transferID);
         if (s != null) {
@@ -75,7 +76,7 @@ public class StockTransferController {
     @Path("/addStockTransfer")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean addInventory(Stktransdetail s) {
+    public boolean addInventory(StockTransfer s) {
         boolean b;
         b = stockTransferSessionBeanRemote.addStockTransfer(s);
         return b;

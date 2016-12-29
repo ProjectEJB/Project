@@ -11,12 +11,15 @@ import javax.ejb.EJB;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import model.Bill;
+import model.Inventory;
 import model.Purchaseorddetail;
 import model.Purchaseorder;
 import model.Salesorder;
@@ -76,16 +79,35 @@ public class PurchaseOrderController {
     @Path("/add")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Purchaseorder saveItems(Purchaseorder p) {
-        purchaseOrderSessionBeanRemote.addPurchaseOrder(p);
-        return p;
+    public Bill saveItems(Bill b) {
+        purchaseOrderSessionBeanRemote.addPurchaseOrder(b);
+        return b;
     }
- 
+
+    @GET
+    @Path("/getinventory")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Inventory getInventory(@QueryParam("InvtID") String InvtID) {
+
+        return purchaseOrderSessionBeanRemote.findIventory(InvtID);
+    }
+
+    @DELETE
+    @Path("/delete")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String delete(@QueryParam("orderNo") String orderNo) {
+
+        purchaseOrderSessionBeanRemote.deletePurchase(orderNo);
+        return orderNo;
+    }
+
     @POST
     @Path("/return")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Purchaseorder render(Purchaseorder p) {
+    public Bill render(Bill p) {
         purchaseOrderSessionBeanRemote.render(p);
         return p;
     }

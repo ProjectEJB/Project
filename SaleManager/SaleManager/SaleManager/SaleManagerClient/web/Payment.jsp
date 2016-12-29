@@ -71,14 +71,7 @@
                                             <td class="text-center">{{paymentAmt}}</td>
                                             <td class="text-center">{{description}}</td>
 
-                                            <td class="text-center">
-                                                <button type="button" class="btn btn-round btn-warning sale-btn btnDetail" title="Chi Tiết"
-                                                        data-toggle="modal"
-                                                        data-target="#saleModal" data-id="${d}">
-                                                    <i class="fa fa-money" aria-hidden="true"></i>
-                                                </button>
-
-                                            </td>
+                                          
 
                                         </tr>
                                         <!--{{/list}}-->

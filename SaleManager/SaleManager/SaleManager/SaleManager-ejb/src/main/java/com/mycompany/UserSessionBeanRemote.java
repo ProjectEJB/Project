@@ -6,12 +6,14 @@
 package com.mycompany;
 
 import javax.ejb.Local;
+import javax.ejb.Remote;
+import model.User;
 
 /**
  *
  * @author Administrator
  */
-@Local
+@Remote
 public interface UserSessionBeanRemote {
-    
+    int login(User u);
 }

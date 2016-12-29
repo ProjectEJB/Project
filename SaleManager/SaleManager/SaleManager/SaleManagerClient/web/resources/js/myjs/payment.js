@@ -81,8 +81,7 @@ $(document).ready(function () {
             contentType: "application/json",
             url: "/SaleManager-web/SaleManager/payment/add",
             success: function (data) {
-//                getListProduct();
-//                reload();
+
                 var successUrl = "Payment.jsp"; // might be a good idea to return this URL in the successful AJAX call
                 window.location.href = successUrl
 
@@ -94,8 +93,20 @@ $(document).ready(function () {
     }
     function proccessAction() {
         $('#btnAdd').click(function () {
-
-            addNewItem();
+            if ($("#txtpaymentNo").val() == "") {
+                alert("Bạn Hãy Nhập Mã Chuyển Tiền");
+            } else
+            if ($("#txtpaymentDate").val() == "") {
+                alert("Bạn Hãy Nhập Ngày Chuyển Tiền");
+            } else
+            if ($("#txtpaymentAmt").val() == "") {
+                alert("Bạn Hãy Nhập Số Tiền");
+            } else
+            if ($("#txtdescription").val() == "") {
+                alert("Bạn Hãy Nhập Ghi Chú");
+            } else {
+                addNewItem();
+            }
         });
     }
     ;

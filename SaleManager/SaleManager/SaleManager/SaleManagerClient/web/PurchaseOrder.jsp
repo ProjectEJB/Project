@@ -24,6 +24,7 @@ external css
     <link href="<c:url value="/resources/css/zabuto_calendar.css"/>" rel="stylesheet">
           <link href="<c:url value="/resources/js/gritter/css/jquery.gritter.css"/>" rel="stylesheet">
           <link href="<c:url value="/resources/lineicons/style.css"/>" rel="stylesheet">
+           <title>Manager Sell</title>
 </head>
 <body>
     <section id="container">
@@ -72,7 +73,7 @@ external css
                                         <th class="text-center">Chiết Khấu</th>
                                         <th class="text-center">Thuế GTGT</th>
                                         <th class="text-center">Thành Tiền</th>
-                                        <th class="text-center"></th>
+                                 
                                     </tr>
                                 </thead>
 
@@ -85,14 +86,7 @@ external css
                                         <td class="text-center">{{taxAmt}}</td>
                                         <td class="text-center">{{amount}}</td>
 
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-round btn-warning sale-btn btnDetail" title="Chi Tiết"
-                                                    data-toggle="modal"
-                                                    data-target="#saleModal" data-id="${d}">
-                                                <i class="fa fa-money" aria-hidden="true"></i>
-                                            </button>
-
-                                        </td>
+                                       
 
                                     </tr>
                                     <!--{{/list}}-->
@@ -131,6 +125,7 @@ external css
                                                     </div>
                                                 </div>
                                             </div>
+                                            
 
                                             <div class="form-inline" role="form">
                                                 <div class="row">

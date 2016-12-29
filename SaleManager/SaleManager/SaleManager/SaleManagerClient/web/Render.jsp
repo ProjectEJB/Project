@@ -24,7 +24,7 @@
                     <header>
                         <div class="row">
                             <div class="col-md-6">
-                                <h3> Danh Sách Phiếu Thanh Trả Hàng</h3>
+                                <h3> Danh Sách Phiếu Trả Hàng</h3>
                             </div>
                             <div class="col-md-6 text-right">
                                 <div class="form-group">
@@ -59,7 +59,7 @@
                                         <th class="text-center">Chiết Khấu</th>
                                         <th class="text-center">Thuế GTGT</th>
                                         <th class="text-center">Thành Tiền</th>
-                                        <th class="text-center"></th>
+                                        
                                     </tr>
                                 </thead>
 
@@ -72,14 +72,7 @@
                                         <td class="text-center">{{taxAmt}}</td>
                                         <td class="text-center">{{amount}}</td>
 
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-round btn-warning sale-btn btnDetail" title="Chi Tiết"
-                                                    data-toggle="modal"
-                                                    data-target="#saleModal" data-id="${d}">
-                                                <i class="fa fa-money" aria-hidden="true"></i>
-                                            </button>
-
-                                        </td>
+                                    
 
                                     </tr>
                                     <!--{{/list}}-->

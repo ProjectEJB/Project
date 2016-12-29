@@ -38,13 +38,15 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Purchaseorder.findByOrderType", query = "SELECT p FROM Purchaseorder p WHERE p.orderType = :orderType"),
     @NamedQuery(name = "Purchaseorder.findByOverdueDate", query = "SELECT p FROM Purchaseorder p WHERE p.overdueDate = :overdueDate"),
     @NamedQuery(name = "Purchaseorder.findByPromAmt", query = "SELECT p FROM Purchaseorder p WHERE p.promAmt = :promAmt"),
-    @NamedQuery(name = "Purchaseorder.findByTaxAmt", query = "SELECT p FROM Purchaseorder p WHERE p.taxAmt = :taxAmt")})
+    @NamedQuery(name = "Purchaseorder.findByTaxAmt", query = "SELECT p FROM Purchaseorder p WHERE p.taxAmt = :taxAmt"),
+    @NamedQuery(name = "Purchaseorder.deleteByOrtderNo", query = "DELETE FROM Purchaseorder p WHERE p.orderNo = :orderNo")})
 public class Purchaseorder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
+    
     @Column(name = "OrderNo")
     private Integer orderNo;
     @Column(name = "Amount")
@@ -66,6 +68,7 @@ public class Purchaseorder implements Serializable {
     private BigInteger promAmt;
     @Column(name = "TaxAmt")
     private BigInteger taxAmt;
+  
 
     public Purchaseorder() {
     }
@@ -170,5 +173,5 @@ public class Purchaseorder implements Serializable {
     public String toString() {
         return "entities.Purchaseorder[ orderNo=" + orderNo + " ]";
     }
-    
+
 }

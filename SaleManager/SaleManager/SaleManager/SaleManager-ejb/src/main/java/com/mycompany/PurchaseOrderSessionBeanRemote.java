@@ -8,6 +8,8 @@ package com.mycompany;
 import java.util.List;
 import javax.ejb.Local;
 import javax.ejb.Remote;
+import model.Bill;
+import model.Inventory;
 import model.Purchaseorddetail;
 import model.Purchaseorder;
 import model.Salesorder;
@@ -20,12 +22,14 @@ import model.Slsorderdetail;
 @Remote
 public interface PurchaseOrderSessionBeanRemote {
 
-    void addPurchaseOrder(Purchaseorder b);
+    void addPurchaseOrder(Bill b);
 
     List FindAll();
 
     List<Purchaseorddetail> viewPurchaseOrderDetail(String OrderNo);
 
-    void render(Purchaseorder s);
+    void render(Bill b);
     List<Purchaseorder> listRender();
+   Inventory findIventory(String invtID) ;
+   void deletePurchase(String orderNo);
 }

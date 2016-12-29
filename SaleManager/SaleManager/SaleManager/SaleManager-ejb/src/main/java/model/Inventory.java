@@ -24,8 +24,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "inventory")
 @NamedQueries({
-    @NamedQuery(name = "Inventory.findByID", query = "SELECT c FROM Inventory c WHERE c.invtID = :invtID")
-})
+    @NamedQuery(name = "Inventory.findAll", query = "SELECT i FROM Inventory i"),
+    @NamedQuery(name = "Inventory.findByInvtID", query = "SELECT i FROM Inventory i WHERE i.invtID = :invtID"),
+    @NamedQuery(name = "Inventory.findByClassName", query = "SELECT i FROM Inventory i WHERE i.className = :className"),
+    @NamedQuery(name = "Inventory.findByDescription", query = "SELECT i FROM Inventory i WHERE i.description = :description"),
+    @NamedQuery(name = "Inventory.findByInvtName", query = "SELECT i FROM Inventory i WHERE i.invtName = :invtName"),
+    @NamedQuery(name = "Inventory.findByQtyStock", query = "SELECT i FROM Inventory i WHERE i.qtyStock = :qtyStock"),
+    @NamedQuery(name = "Inventory.findBySalesPriceL", query = "SELECT i FROM Inventory i WHERE i.salesPriceL = :salesPriceL"),
+    @NamedQuery(name = "Inventory.findBySalesPriceT", query = "SELECT i FROM Inventory i WHERE i.salesPriceT = :salesPriceT"),
+    @NamedQuery(name = "Inventory.findBySlsTax", query = "SELECT i FROM Inventory i WHERE i.slsTax = :slsTax"),
+    @NamedQuery(name = "Inventory.findByStatus", query = "SELECT i FROM Inventory i WHERE i.status = :status"),
+    @NamedQuery(name = "Inventory.findByUnitIDL", query = "SELECT i FROM Inventory i WHERE i.unitIDL = :unitIDL"),
+    @NamedQuery(name = "Inventory.findByUnitIDT", query = "SELECT i FROM Inventory i WHERE i.unitIDT = :unitIDT"),
+    @NamedQuery(name = "Inventory.findByUnitRate", query = "SELECT i FROM Inventory i WHERE i.unitRate = :unitRate")})
+
 public class Inventory implements Serializable {
 
     private static final long serialVersionUID = 1L;

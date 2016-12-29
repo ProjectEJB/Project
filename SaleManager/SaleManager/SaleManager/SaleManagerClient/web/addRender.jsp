@@ -65,7 +65,7 @@
                                                 <th>Đơn giá</th>
                                                 <th>Đơn vị tính</th>
                                                 <th>Chiết khấu</th>
-                                              
+
                                                 <th>Thành tiền</th>
                                             </tr>
                                         </thead>
@@ -79,13 +79,13 @@
                                                 <td><label id="txtDongia"></label></td>
                                                 <td>thùng</td>
                                                 <td><input type="number" min="0" id="txtchietkhau"  required /></td>
-                                                
+
                                                 <td><label id="txtthanhtien"></label></td>
 
                                             </tr>
 
-                                        <!--<button  class="btn btn-info" style="float: right;margin-top: 10px;margin-right: 10px" id="btnSearch">Tìm</button>-->
-                                        <!--<button type="button" class="btn btn-primary" id="btnAdd">Thêm Hóa Đơn</button>-->
+                                            <!--<button  class="btn btn-info" style="float: right;margin-top: 10px;margin-right: 10px" id="btnSearch">Tìm</button>-->
+                                            <!--<button type="button" class="btn btn-primary" id="btnAdd">Thêm Hóa Đơn</button>-->
                                         </tbody>
                                     </table>
                                     <div class="form-inline" role="form">
@@ -102,20 +102,20 @@
                                     <div class="form-inline" role="form">
                                         <div class="row">
                                             <label class="col-md-4 col-md-offset-1 control-label" for="description">Thuế GTGT :</label>
-<!--                                            <div class="form-group col-sm-6">
-                                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
-                                                       name="price" id="txttaxAmount">
-                                            </div>-->
+                                            <!--                                            <div class="form-group col-sm-6">
+                                                                                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
+                                                                                                   name="price" id="txttaxAmount">
+                                                                                        </div>-->
                                             <label class="col-md-4 col-md-offset-1 control-label"  for="description" id="txttaxAmount" ></label><label>.VNĐ</label>
                                         </div>
                                     </div>
                                     <div class="form-inline" role="form">
                                         <div class="row">
                                             <label class="col-md-4 col-md-offset-1 control-label" for="description" >Thành Tiền :</label>
-<!--                                            <div class="form-group col-sm-6">
-                                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
-                                                       name="price" id="txtamount">
-                                            </div>-->
+                                            <!--                                            <div class="form-group col-sm-6">
+                                                                                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
+                                                                                                   name="price" id="txtamount">
+                                                                                        </div>-->
                                             <label class="col-md-4 col-md-offset-1 control-label"  for="description" id="txtamount" ></label><label>.VNĐ</label>
                                         </div>
                                     </div>
@@ -137,6 +137,13 @@
                 </section>
             </section>
         </section>
+        <script src="resources/js/jquery.js"></script>
+        <script src="resources/js/jquery-1.8.3.min.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="resources/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="resources/js/jquery.scrollTo.min.js"></script>
+        <script src="resources/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="resources/js/jquery.sparkline.js"></script>
     </body>
 
 

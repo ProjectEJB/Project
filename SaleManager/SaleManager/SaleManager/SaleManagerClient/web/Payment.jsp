@@ -91,7 +91,7 @@
             <!--footer end-->
         </section>
 
-
+   
     </body>
     <script src="<c:url value="resources/js/myjs/payment.js" />"></script>
 </html>

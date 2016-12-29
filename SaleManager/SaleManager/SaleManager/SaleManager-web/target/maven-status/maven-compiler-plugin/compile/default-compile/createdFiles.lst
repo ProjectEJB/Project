@@ -1,17 +1,9 @@
-com\mycompany\SalepersonController.class
-com\mycompany\SalesOrderManagerController.class
 com\mycompany\InventoryController.class
-<<<<<<< HEAD
 com\mycompany\PaymentController.class
 com\mycompany\SalepersonController.class
 com\mycompany\UserController.class
 com\mycompany\CustomerController.class
 com\mycompany\SalesOrderController.class
+com\mycompany\SalesOrderManagerController.class
 com\mycompany\PurchaseOrderController.class
-=======
 com\mycompany\StockTransferController.class
-com\mycompany\PurchaseOrderController.class
-com\mycompany\CustomerController.class
-com\mycompany\PaymentController.class
-com\mycompany\SalesOrderController.class
->>>>>>> origin/master

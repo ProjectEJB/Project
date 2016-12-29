@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\InventoryController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\CustomerController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalepersonController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalesOrderController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\PurchaseOrderController.java
+C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalesOrderManagerController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\PaymentController.java
+C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\StockTransferController.java
 C:\Users\Administrator\Documents\GitHub\Project\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\UserController.java
-=======
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalesOrderController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalepersonController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\CustomerController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\SalesOrderManagerController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\PurchaseOrderController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\InventoryController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\StockTransferController.java
-F:\SaleManager\SaleManager\SaleManager\SaleManager-web\src\main\java\com\mycompany\PaymentController.java
->>>>>>> origin/master

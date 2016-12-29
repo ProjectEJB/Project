@@ -8,17 +8,17 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Vendor.class)
 public abstract class Vendor_ {
 
-	public static volatile SingularAttribute<Vendor, Long> amount;
 	public static volatile SingularAttribute<Vendor, Long> dueAmt;
-	public static volatile SingularAttribute<Vendor, String> phone;
-	public static volatile SingularAttribute<Vendor, String> fax;
-	public static volatile SingularAttribute<Vendor, String> vendorID;
-	public static volatile SingularAttribute<Vendor, String> vendorName;
-	public static volatile SingularAttribute<Vendor, String> status;
-	public static volatile SingularAttribute<Vendor, String> email;
+	public static volatile SingularAttribute<Vendor, Long> amount;
 	public static volatile SingularAttribute<Vendor, String> address;
+	public static volatile SingularAttribute<Vendor, String> phone;
+	public static volatile SingularAttribute<Vendor, String> vendorID;
 	public static volatile SingularAttribute<Vendor, String> description;
+	public static volatile SingularAttribute<Vendor, String> vendorName;
+	public static volatile SingularAttribute<Vendor, String> fax;
 	public static volatile SingularAttribute<Vendor, Long> overdueAmt;
+	public static volatile SingularAttribute<Vendor, String> email;
+	public static volatile SingularAttribute<Vendor, String> status;
 
 }
 

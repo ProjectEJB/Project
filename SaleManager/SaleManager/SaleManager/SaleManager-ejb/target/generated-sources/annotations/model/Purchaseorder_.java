@@ -10,15 +10,15 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Purchaseorder.class)
 public abstract class Purchaseorder_ {
 
+	public static volatile SingularAttribute<Purchaseorder, String> orderType;
+	public static volatile SingularAttribute<Purchaseorder, Date> overdueDate;
+	public static volatile SingularAttribute<Purchaseorder, BigInteger> amount;
+	public static volatile SingularAttribute<Purchaseorder, Integer> orderNo;
+	public static volatile SingularAttribute<Purchaseorder, BigInteger> comAmt;
 	public static volatile SingularAttribute<Purchaseorder, BigInteger> promAmt;
 	public static volatile SingularAttribute<Purchaseorder, BigInteger> discAmt;
-	public static volatile SingularAttribute<Purchaseorder, BigInteger> amount;
-	public static volatile SingularAttribute<Purchaseorder, BigInteger> taxAmt;
-	public static volatile SingularAttribute<Purchaseorder, Integer> orderNo;
-	public static volatile SingularAttribute<Purchaseorder, String> orderType;
 	public static volatile SingularAttribute<Purchaseorder, Date> orderDate;
-	public static volatile SingularAttribute<Purchaseorder, Date> overdueDate;
-	public static volatile SingularAttribute<Purchaseorder, BigInteger> comAmt;
+	public static volatile SingularAttribute<Purchaseorder, BigInteger> taxAmt;
 
 }
 

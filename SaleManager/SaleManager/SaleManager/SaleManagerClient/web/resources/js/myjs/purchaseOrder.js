@@ -4,44 +4,7 @@ $(document).ready(function () {
             value.index = i + 1;
         });
     }
-//    function action(list) {
-//        $('.btnDetail').click(function () {
-//            var id = $(this).data('id');
-//            var listClub = [];
-//            $.each(list, function (i, value) {
-//                if (value.id === id) {
-//                    listClub = value.listClub;
-//                }
-//            });
-//            $.each(listClub, function (i, value) {
-//                console.log("name:" + value.name);
-//            });
-//            var result = {};
-//            result.list = listClub;
-//            var template = $('#tplListClub').html();
-//            var html = Mustache.render(template, result);
-//            $('#listClub').html(html);
-//            $("#dialogListClub").dialog({
-//                resizable: false,
-//                height: "auto",
-//                width: "400px",
-//                show: {
-//                    effect: "blind",
-//                    duration: 1000
-//                },
-//                hide: {
-//                    effect: "explode",
-//                    duration: 1000
-//                },
-//                modal: true,
-//                buttons: {
-//                    Cancel: function () {
-//                        $(this).dialog("close");
-//                    }
-//                }
-//            });
-//        });
-//    }
+
     function reload() {
         $.ajax({
             dataType: "json",
@@ -68,23 +31,19 @@ $(document).ready(function () {
         var discAmount = $("#txtdiscAmount").text();
         var taxAmount = $("#txttaxAmount").text();
         var amount = $("#txtamount").text();
+        var invtID = $("#txtInvtID").val();
+        var purchasePrice = $("#txtDongia").text();
+        var discAmt = $("#txtchietkhau").text();
+        var quantity = $("#txtSoluong").val();
+
         var purchase = {
             "orderNo": orderNo,
             "orderDate": orderDate,
             "discAmt": discAmount,
             "taxAmt": taxAmount,
-            "amount": amount
-
-        };
-        var invtID = $("#txtInvtID").val();
-        var purchasePrice = $("#txtDongia").text();
-        var discAmt = $("#txtchietkhau").text();
-        var quantity = $("#txtSoluong").text();
-        var detail = {
-            "orderNo": orderNo,
+            "amount": amount,
             "purchasePrice": purchasePrice,
             "invtID": invtID,
-            "discAmt": discAmt,
             "qty": quantity
         }
         $.ajax({
@@ -94,9 +53,7 @@ $(document).ready(function () {
             contentType: "application/json",
             url: "/SaleManager-web/SaleManager/purchaseorder/add",
             success: function (data) {
-//                getListProduct();
-//                reload();
-                var successUrl = "PurchaseOrder.jsp"; // might be a good idea to return this URL in the successful AJAX call
+                var successUrl = "PurchaseOrder.jsp";
                 window.location.href = successUrl
 
             },
@@ -116,10 +73,6 @@ $(document).ready(function () {
             contentType: "application/json",
             url: "/SaleManager-web/SaleManager/purchaseorder/getinventory",
             success: function (data) {
-//                getListProduct();
-//                reload();
-//                var successUrl = "PurchaseOrder.jsp"; // might be a good idea to return this URL in the successful AJAX call
-//                window.location.href = successUrl
 
 
                 $('#txtSoluong').on('change', function () {
@@ -133,27 +86,32 @@ $(document).ready(function () {
 
 
                 })
+
                 $('#txtchietkhau').on('change', function () {
                     var soluong = $("#txtSoluong").val();
                     var gia = $("#txtthanhtien").text();
                     var ck = $("#txtchietkhau").val();
 
                     document.getElementById("txtthanhtien").textContent = data.salesPriceL * soluong;
-                    document.getElementById("txtamount").textContent = gia - (gia * ck / 100) + gia * 10 / 100;
-//                    document.getElementById("txttaxAmount").textContent = gia * 10 / 100;
                     document.getElementById("txtdiscAmount").textContent = ck;
-                })
-                $('#txtthanhtien').on('change', function () {
+                    document.getElementById("txttaxAmount").textContent = data.salesPriceL * soluong * 10 / 100;
+                    document.getElementById("txtamount").textContent = (data.salesPriceL * soluong) - ((data.salesPriceL * soluong) * ck / 100) + (data.salesPriceL * soluong) * 10 / 100;
 
-                })
+                }
+                )
 
 
 
+
+
+                var soluong = $("#txtSoluong").val();
+                var ck = $("#txtchietkhau").val();
+                document.getElementById("txtthanhtien").textContent = data.salesPriceL * soluong;
+                document.getElementById("txtamount").textContent = data.salesPriceL - (data.salesPriceL * ck / 100) + data.salesPriceL * 10 / 100;
+                document.getElementById("txtdiscAmount").textContent = ck;
                 document.getElementById("txtInventName").textContent = data.invtName;
                 document.getElementById("txtDongia").textContent = data.salesPriceL;
 
-//                document.getElementById("txtVAT").textContent = (10 / 100) * data.salesPriceL;
-//                document.getElementById("txtthanhtien").textContent = data.salesPriceL * soluong;
 
             },
             error: function (data) {
@@ -172,7 +130,7 @@ $(document).ready(function () {
                 alert("Bạn Phải Nhập Số Hóa Đơn")
                 document.getElementById("#txtorderNo").focus();
             }
-             if ($("#txtorderDate").val() == "") {
+            if ($("#txtorderDate").val() == "") {
                 alert("Bạn Phải Nhập Ngày Hóa Đơn")
                 document.getElementById("#txtorderDate").focus();
 
@@ -182,7 +140,7 @@ $(document).ready(function () {
                 document.getElementById("#txtInvtID").focus();
 
             }
-               if ($("#txtSoluong").val() == "") {
+            if ($("#txtSoluong").val() == "") {
                 alert("Bạn Phải Nhập Số Lượng")
                 document.getElementById("#txtInvtID").focus();
 
@@ -197,10 +155,7 @@ $(document).ready(function () {
                 addNewItem();
             }
         });
-//        $('#btnSearch').click(function () {
-//
-//            listInvent();
-//        });
+
 
 
     }
@@ -208,6 +163,7 @@ $(document).ready(function () {
     $('#txtInvtID').on('change', function () {
 
         listInvent();
+
     })
     reload();
     proccessAction();

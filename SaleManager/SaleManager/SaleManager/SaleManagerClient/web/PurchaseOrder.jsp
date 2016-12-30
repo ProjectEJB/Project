@@ -8,7 +8,11 @@
 
 <html>
     <head>
-
+    <script src="<c:url value="/resources/js/chart-master/Chart.js"/>"></script>
+        <c:import url="/resources/common/header.jsp"/>
+        <link href="<c:url value="/resources/css/zabuto_calendar.css"/>" rel="stylesheet">
+        <link href="<c:url value="/resources/js/gritter/css/jquery.gritter.css"/>" rel="stylesheet">
+        <link href="<c:url value="/resources/lineicons/style.css"/>" rel="stylesheet">
         <c:import url="/resources/common/header.jsp"/>
 
         <title>Manager Sell</title>

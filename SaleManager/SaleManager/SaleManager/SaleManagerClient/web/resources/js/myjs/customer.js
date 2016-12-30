@@ -23,6 +23,30 @@ function proccessAction() {
         deleteItem(id);
         console.log('tuananh');
     });
+    $( "#txtcustID" ).keyup(function() {
+        
+        var id= $( "#txtcustID" ).val();
+        $.ajax({
+        dataType: "json",
+        type: 'GET',
+        url: "/SaleManager-web/SaleManager/customer/detail?id=" +id,
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data);
+            if(data === null){
+                $('#btnAdd').prop('disabled',false);
+                 $('#alert').text('');
+            }
+            else{
+                $('#btnAdd').prop('disabled',true);               
+                $('#alert').text('Id nay da co');
+            }
+        },
+        error: function (data) {
+
+        }
+    });
+});
 }
 ;
 

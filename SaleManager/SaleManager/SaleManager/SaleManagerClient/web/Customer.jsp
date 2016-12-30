@@ -104,4 +104,5 @@
         </section>
     </body>
     <script src="<c:url value="resources/js/myjs/customer.js" />"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
 </html>

@@ -18,6 +18,31 @@ function proccessAction() {
         deleteItem(id);
         console.log(id);
         });
+        
+        $( "#txtinvtID" ).keyup(function() {
+        console.log( "Handler for .keypress() called." );
+        var id= $( "#txtinvtID" ).val();
+        $.ajax({
+        dataType: "json",
+        type: 'GET',
+        url: "/SaleManager-web/SaleManager/inventory/detail?id=" +id,
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data);
+            if(data === null){
+                $('#btnAdd').prop('disabled',false);
+                 $('#alert').text('');
+            }
+            else{
+                $('#btnAdd').prop('disabled',true);               
+                $('#alert').text('Id nay da co');
+            }
+        },
+        error: function (data) {
+
+        }
+    });
+});
     }
 
 function reload() {

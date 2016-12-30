@@ -56,7 +56,7 @@ public class InventorySessionBean implements InventorySessionBeanRemote {
     public Inventory getDetail(String id) {
         try{
         entityManager =entityManagerFactory.createEntityManager();
-        Inventory c= (Inventory) entityManager.createNamedQuery("Inventory.findByID").setParameter("invtID", id).getSingleResult();
+        Inventory c= (Inventory) entityManager.createNamedQuery("Inventory.findByInvtID").setParameter("invtID", id).getSingleResult();
         return c;
         }catch(Exception e){
             return null;

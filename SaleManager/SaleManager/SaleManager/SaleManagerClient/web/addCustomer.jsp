@@ -20,6 +20,7 @@
 
             <c:import url="/resources/common/topBar.jsp"/>
             <c:import url="/resources/common/menu.jsp"/>
+            
             <section id="main-content">
                 <section class="wrapper">
                     <header>
@@ -39,8 +40,9 @@
                                     <div class="form-inline" role="form">
                                         <div class="row">
                                             <label class="col-md-4 col-md-offset-1 control-label" for="productName">Mã khách hàng</label>
-                                            <div class="form-group col-sm-6">
+                                            <div class="form-group col-sm-6" id="target">
                                                 <input type="text" class="form-control" name="productName" id="txtcustID">
+                                                <div id="alert"  style="color:red"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +92,7 @@
                                 </form>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="btnBack">Trở về</button>
-                                    <button type="button" class="btn btn-primary" id="btnAdd">Thêm khách hàng</button>
+                                    <button type="button" class="btn btn-primary" id="btnAdd" disabled>Thêm khách hàng</button>
                                 </div>
 
                             </div>

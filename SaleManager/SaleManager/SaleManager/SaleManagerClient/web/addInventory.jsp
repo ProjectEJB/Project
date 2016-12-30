@@ -40,6 +40,7 @@
                                             <label class="col-md-4 col-md-offset-1 control-label" for="productName">Mã hàng</label>
                                             <div class="form-group col-sm-6">
                                                 <input type="text" class="form-control" name="productName" id="txtinvtID">
+                                                <div id="alert"  style="color:red"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +80,7 @@
                                 </form>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="btnBack">Trở về</button>
-                                    <button type="button" class="btn btn-primary" id="btnAdd">Thêm sản phẩm</button>
+                                    <button type="button" class="btn btn-primary" id="btnAdd" disabled>Thêm sản phẩm</button>
                                 </div>
 
                             </div>
